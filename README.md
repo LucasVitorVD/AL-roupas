@@ -1,6 +1,6 @@
-# Capputeeno
+# AL Roupas
 
- Projeto realizado para o teste que simula um desafio front-end da RocketSeat, onde o objetivo é testar as habilidades do candidato para uma vaga no cargo.  
+Projeto feito para uma pequena apresentação escolar
 
 ## Tecnologias utilizadas
 
