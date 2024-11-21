@@ -72,6 +72,19 @@ export const StyledMobileMenu = styled.div`
       font-weight: bold;
     }
   }
+
+  .navigation-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid black;
+
+    .title {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+  }
 `
 
 export const StyledCartIcon = styled.div`

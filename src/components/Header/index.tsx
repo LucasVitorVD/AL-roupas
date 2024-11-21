@@ -1,25 +1,14 @@
 import { useContext, useState } from "react"
-import { StyledHeaderWrapper, StyledSearchWrapper, StyledSearchArea, StyledCartArea, StyledMobileMenuIcon } from "./styles"
-import { ShoppingBag, Search } from "lucide-react"
+import { StyledHeaderWrapper, StyledSearchWrapper, StyledNavigationWrapper, StyledCartArea, StyledMobileMenuIcon } from "./styles"
+import { ShoppingBag } from "lucide-react"
 import { Link } from "react-router-dom"
 import { CartContext } from "@/context/CartContext"
 import MobileNav from "../MobileNav"
-import { FilterContext } from "@/context/FilterContext"
 
 const Header = () => {
   const { cartItems } = useContext(CartContext)
-  const { setName, setCurrentPage } = useContext(FilterContext)
 
   const [isOpen, setIsOpen] = useState(false)
-  const [search, setSearch] = useState("")
-
-  function handleSearch(name: string) {
-    setCurrentPage(0)
-    setName(name)
-    setSearch("")
-
-    return
-  }
 
   return (
     <StyledHeaderWrapper>
@@ -27,14 +16,11 @@ const Header = () => {
         <h1>AL modas</h1>
       </Link>
       <StyledSearchWrapper>
-        <StyledSearchArea>
-          <input
-            type="text"
-            placeholder="Procurando por algo específico?"
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <Search size={30} onClick={() => handleSearch(search)} />
-        </StyledSearchArea>
+      <StyledNavigationWrapper>
+        <Link to="/">Início</Link>
+        <Link to="/about">Sobre nós</Link>
+        <Link to="/jobs">Vagas</Link>
+      </StyledNavigationWrapper>
         <Link to="/cart">
           <StyledCartArea>
             <ShoppingBag />
@@ -49,7 +35,7 @@ const Header = () => {
       />
 
       {isOpen && (
-        <MobileNav setIsOpen={setIsOpen} />  
+        <MobileNav setIsOpen={setIsOpen} />
       )}
     </StyledHeaderWrapper>
   )

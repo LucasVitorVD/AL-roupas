@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import { ContainerWrapper, MainWrapper } from '@/Styles.ts'
 import ProductPage from './pages/ProductPage'
 import CartPage from './pages/CartPage'
+import AboutUs from './pages/about'
+import Jobs from './pages/jobs'
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
             <Route path='/' element={<Home />} />
             <Route path='/product/:id' element={<ProductPage />} />
             <Route path='/cart' element={<CartPage />} />
+            <Route path='/about' element={<AboutUs />} />
+            <Route path='/jobs' element={<Jobs />} />
           </Routes>
         </MainWrapper>
       </BrowserRouter>

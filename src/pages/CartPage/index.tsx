@@ -3,10 +3,12 @@ import { CartContext } from "@/context/CartContext"
 import { StyledCartSection, StyledCartProductsWrapper, StyledProductsWrapper, StyledOrderSummaryWrapper, StyledFooter } from "./styles"
 import ProductCard from "@/components/Product"
 import GoBack from "@/components/GoBack"
-import Button from "@/components/Button"
+import { Button } from "@/components/ui/button"
+import { useToast } from "@/hooks/use-toast"
 
 const CartPage = () => {
   const { cartItems, shipping } = useContext(CartContext)
+  const { toast } = useToast()
 
   const totalInCents = cartItems.reduce((acc, item) => {
     if (!item.quantity) item.quantity = 1
@@ -69,9 +71,16 @@ const CartPage = () => {
           </div>
 
           <Button 
-            text="FINALIZAR A COMPRA"
             value="success"
-          />
+            onClick={() => {
+              toast({
+                title: "Compra realizada!",
+                description: "Sua compra foi realizada, aguarde mais informações no seu email.",
+              })
+            }}
+          >
+            FINALIZAR A COMPRA
+          </Button>
         </div>
 
         <StyledFooter>

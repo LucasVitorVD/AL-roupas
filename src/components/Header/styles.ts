@@ -32,23 +32,10 @@ export const StyledSearchWrapper = styled.div`
   }
 `
 
-export const StyledSearchArea = styled.div`
+export const StyledNavigationWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  width: 100%;
-  background: #F3F5F6;
-  border-radius: 0.5rem;
-  padding: .56rem 1rem;
-
-  input {
-    width: 100%;
-    padding: .5rem;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-  }
 `
 
 export const StyledCartArea = styled.div`

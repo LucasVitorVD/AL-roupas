@@ -111,7 +111,15 @@ export const StyledProductCard = styled.div<StyledProductCardProps>`
     }
 
     @media screen and (max-width: ${breakpoints.sm}) {
-      width: ${props => (props.page === "cart" && "21rem")};
+      figure {
+        width: 58%;
+        height: auto;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
     }
   }
 

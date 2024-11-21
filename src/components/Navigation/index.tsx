@@ -10,9 +10,10 @@ interface Category {
 
 interface Props {
   isColumn: boolean
+  setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Navigation = ({ isColumn }: Props) => {
+const Navigation = ({ isColumn, setIsOpen }: Props) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [categories, setCategories] = useState<Category[]>([])
@@ -46,6 +47,10 @@ const Navigation = ({ isColumn }: Props) => {
     const params = new URLSearchParams();
     params.set("category", category);
 
+    if (setIsOpen) {
+      setIsOpen(false)
+    }
+    
     navigate(`?${params.toString()}`);
   }
 

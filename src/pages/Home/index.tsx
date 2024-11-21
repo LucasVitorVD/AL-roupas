@@ -35,7 +35,7 @@ const Home = () => {
         <Navigation isColumn={false} />
       </StyledNavWrapper>
       
-      <h1 className="categoryTitle">{ mappedCategory[category as keyof typeof mappedCategory]?.title ?? "Joalheria" }</h1>
+      <h1 className="font-bold text-2xl text-center my-2">{ mappedCategory[category as keyof typeof mappedCategory]?.title ?? "Joalheria" }</h1>
 
       <StyledProductsWrapper>
         {loading && <TailSpin color="black" />}
